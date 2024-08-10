@@ -1,0 +1,17 @@
+.draw {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+}
+
+.box {
+    display: flex;
+    flex: auto;
+}
+
+.cell {
+    border: 1px solid black;
+    flex: auto;
+}
