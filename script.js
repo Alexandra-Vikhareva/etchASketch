@@ -35,5 +35,19 @@ function askCellsNum() {
     return Number(cellsNum)
 }
 
-let n = askCellsNum();
-drawGrid(n);
+function etchAScetch() {
+    let n = askCellsNum();
+    drawGrid(n);
+
+    clear = document.querySelector('#clear');
+    clear.addEventListener('click', () => {
+        draw = document.querySelector('.draw');
+        while (draw.firstChild) {
+            draw.removeChild(draw.firstChild)
+        };
+        let n = askCellsNum();
+        drawGrid(n);
+});
+}
+
+etchAScetch();

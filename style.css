@@ -1,8 +1,8 @@
 .draw {
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     border: 1px solid black;
 }
 
@@ -12,10 +12,25 @@
 }
 
 .cell {
-    border: 1px solid black;
     flex: auto;
 }
 
 .black {
     background-color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 80px 30px;
+}
+
+h1 {
+    text-align: center;
 }
