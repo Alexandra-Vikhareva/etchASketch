@@ -20,9 +20,20 @@ function drawGrid (n = 16) {
                 cell.classList.add('black');
             });
         });
-    };
+    }
 
     sketch();
 }
 
-drawGrid();
+function askCellsNum() {
+
+    let cellsNum;
+    do {
+        cellsNum = prompt('Enter the number of cells on one side (less than 100):');
+    } while (!Number(cellsNum) || cellsNum % 1 != 0 || cellsNum <= 0 || cellsNum > 100);
+
+    return Number(cellsNum)
+}
+
+let n = askCellsNum();
+drawGrid(n);
