@@ -12,17 +12,26 @@ function drawGrid (n = 16) {
         };
         draw.appendChild(box);
     };
-    
-    function sketch () {
-        const cells = document.querySelectorAll('.cell');
-        cells.forEach((cell) => {
-            cell.addEventListener('mouseenter', function () {
-                this.style.backgroundColor = 'black';
-            });
-        });
-    }
+}    
 
-    sketch();
+function sketch () {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseenter', function () {
+            this.style.backgroundColor = 'black';
+        });
+    });
+}
+
+function rainbowSketch() {
+        
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseenter', function () {
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            this.style.backgroundColor = "#" + randomColor;
+        });
+    });
 }
 
 function askCellsNum() {
@@ -38,6 +47,7 @@ function askCellsNum() {
 function etchAScetch() {
     let n = askCellsNum();
     drawGrid(n);
+    sketch();
 
     clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
@@ -47,6 +57,8 @@ function etchAScetch() {
         };
         let n = askCellsNum();
         drawGrid(n);
+
+    
 });
 }
 

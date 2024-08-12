@@ -15,10 +15,6 @@
     flex: auto;
 }
 
-.black {
-    background-color: black;
-}
-
 .container {
     display: flex;
     justify-content: center;
