@@ -34,6 +34,19 @@ function rainbowSketch() {
     });
 }
 
+function progressiveSketch() {
+
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseenter', function () {
+            if (this.style.opacity < 1) {
+                let buff = Number(this.style.opacity) + 0.1;
+                this.style.opacity = buff; 
+            }
+        });
+    });
+}
+
 function askCellsNum() {
 
     let cellsNum;
@@ -50,6 +63,7 @@ function etchAScetch() {
     const clear = document.querySelector('#clear');
     const rainbow = document.querySelector('#rainbow');
     const normal = document.querySelector('#normal');
+    const progressive = document.querySelector('#progressive');
 
     rainbow.addEventListener('click', () => {
         rainbowSketch();
@@ -57,6 +71,10 @@ function etchAScetch() {
 
     normal.addEventListener('click', () => {
         sketch();
+    })
+
+    progressive.addEventListener('click', () => {
+        progressiveSketch();
     })
     
     drawGrid(n);
