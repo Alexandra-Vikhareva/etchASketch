@@ -16,8 +16,8 @@ function drawGrid (n = 16) {
     function sketch () {
         const cells = document.querySelectorAll('.cell');
         cells.forEach((cell) => {
-            cell.addEventListener('mouseenter', () => {
-                cell.classList.add('black');
+            cell.addEventListener('mouseenter', function () {
+                this.style.backgroundColor = 'black';
             });
         });
     }
