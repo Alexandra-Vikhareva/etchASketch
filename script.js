@@ -45,11 +45,23 @@ function askCellsNum() {
 }
 
 function etchAScetch() {
+
     let n = askCellsNum();
+    const clear = document.querySelector('#clear');
+    const rainbow = document.querySelector('#rainbow');
+    const normal = document.querySelector('#normal');
+
+    rainbow.addEventListener('click', () => {
+        rainbowSketch();
+    })
+
+    normal.addEventListener('click', () => {
+        sketch();
+    })
+    
     drawGrid(n);
     sketch();
 
-    clear = document.querySelector('#clear');
     clear.addEventListener('click', () => {
         draw = document.querySelector('.draw');
         while (draw.firstChild) {
@@ -57,8 +69,8 @@ function etchAScetch() {
         };
         let n = askCellsNum();
         drawGrid(n);
+        sketch();
 
-    
 });
 }
 
